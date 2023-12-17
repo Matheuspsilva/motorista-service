@@ -1,6 +1,7 @@
 package com.example.motoristaservice.service;
 
 import com.example.motoristaservice.model.Motorista;
+import com.example.motoristaservice.repository.MotoristaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
