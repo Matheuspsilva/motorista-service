@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: motorista-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/motoristas
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1.0  # Captura todos os traces para fins de demonstra��o
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
