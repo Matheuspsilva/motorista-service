@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Controller
+@RestController
+@RequestMapping("/motoristas")
 public class MotoristaController {
 
     private static final Logger log = LoggerFactory.getLogger(MotoristaController.class);
@@ -24,32 +25,32 @@ public class MotoristaController {
         this.motoristaService = motoristaService;
     }
 
-    @GetMapping("/motoristas/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Motorista> get(@PathVariable("id") Long id) {
         log.info("Buscando motorista por id: {}", id);
         return ResponseEntity.ok(motoristaService.get(id));
     }
 
-    @GetMapping("/motoristas")
+    @GetMapping("")
     public ResponseEntity<List<Motorista>> getAll() {
         log.info("Buscando todos os motoristas");
         return ResponseEntity.ok(motoristaService.getAll());
     }
 
 
-    @PostMapping("/motoristas")
+    @PostMapping("")
     public ResponseEntity<Motorista> create(@RequestBody Motorista motorista) {
         log.info("Criando motorista: {}", motorista);
         return ResponseEntity.ok(motoristaService.create(motorista));
     }
 
-    @PutMapping("/motoristas/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Motorista> update(@PathVariable("id") Long id, @RequestBody Motorista motorista) {
         log.info("Atualizando motorista: {}", motorista);
         return ResponseEntity.ok(motoristaService.update(id, motorista));
     }
 
-    @DeleteMapping("/motoristas/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Motorista> delete(@PathVariable("id") Long id) {
         log.info("Deletando motorista por id: {}", id);
         return ResponseEntity.ok(motoristaService.delete(id));

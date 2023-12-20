@@ -1,6 +1,7 @@
 package com.example.motoristaservice.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Motorista {
@@ -9,9 +10,11 @@ public class Motorista {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @NotBlank
     @Column(name = "nome", nullable = false)
     private String nome;
 
+    @NotBlank
     @Column(name = "cnh", nullable = false)
     private String cnh;
 

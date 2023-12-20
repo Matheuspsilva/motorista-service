@@ -34,3 +34,9 @@ eureka:
 logging:
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+  api-docs:
+    path: /docs
