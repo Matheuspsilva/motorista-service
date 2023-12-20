@@ -17,8 +17,22 @@ O `motorista-service` é um microserviço Spring Boot projetado para gerenciar i
 
 ## Instalação e Execução
 1. Clone o repositório
-2. Execute mvn clean install.
-3. Inicie a aplicação com mvn spring-boot:run.
+
+```bash
+git clone https://github.com/Matheuspsilva/motorista-service.git
+```
+
+2. Navegue até a pasta do projeto e execute:
+    
+```bash
+mvn clean install
+```
+
+3. Para iniciar a aplicação, execute:
+        
+```bash
+mvn spring-boot:run
+```
 
 ## Swagger UI
 A documentação da API REST está disponível através do Swagger UI. Após iniciar a aplicação, acesse http://localhost:8081/swagger-ui.html para visualizar e interagir com os endpoints da API.
